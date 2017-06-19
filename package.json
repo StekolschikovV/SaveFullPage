@@ -25,6 +25,7 @@
     "gulp": "latest",
     "electron-windows-installer": "latest",
     "electron-winstaller": "latest",
+    "image-downloader": "latest",
     "path": "latest"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@ var BrowserWindow = electron.BrowserWindow;
 app.on('ready', () => {
     appWindow = new BrowserWindow({
         width: 600,
-        height: 400
+        height: 370
     });
     appWindow.loadURL(`file://${__dirname}/index.html`);
     // appWindow.webContents.openDevTools();
