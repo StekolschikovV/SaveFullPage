@@ -1,26 +1,40 @@
 
 $(document).ready(function () {
 
+    console.log('START');
+
     $( ".loader-block" ).fadeOut( "slow" );
 
-    $('#GET').click(function () {
+    var url = '',
+        name = '',
+        dir = '',
+        options = '',
+        PASSWORD = '',
+        HOST = '',
+        PORT = '',
+        USERNAME = '',
+        dirOnServer = '',
+        dirOnPC = '',
+        scrape = require('website-scraper'),
+        path = require('path'),
+        fs = require('fs'),
+        Fs = fs,
+        JSFtp = require("jsftp"),
+        Path = path,
+        FtpDeploy = require('ftp-deploy'),
+        ftpDeploy = new FtpDeploy();
 
-        console.log('START');
+    $('#GET').click(function () {
 
         $( ".loader-block" ).fadeIn( "slow" );
 
         // get data
-        var url = $('#URL').val();
-        var name = $('#NAME').val();
-
-        // lib
-        var scrape = require('website-scraper'),
-            path = require('path'),
-            fs = require('fs');
+        url = $('#URL').val();
+        name = $('#NAME').val();
 
         // data
-        var dir = path.join(__dirname + '../../../', 'save', name), options;
-        // var dir = path.join(__dirname, 'save', name), options;
+        // dir = path.join(__dirname + '../../../', 'save', name), options;
+        dir = path.join(__dirname, 'save', name);
         if ($('#video').is(":checked"))
         {
             options = {
@@ -48,32 +62,67 @@ $(document).ready(function () {
             $( ".loader-block" ).fadeOut( "slow" );
             $.notify('<strong>ОШИБКА!</strong> проверьте URL...', { allow_dismiss: false });
         });
-        
-        // get slider img
-        // function getSliderImg() {
-        //     console.log('START getSliderImg');
-        //     fs.readFile(path.join(__dirname, 'save', name) + '/index.html', 'utf8', function (err,data) {
-        //         try {
-        //             var $str1 = $(data);
-        //             $str1.find('img').each(function( index, element ) {
-        //                 text = $(element).attr( "src").replace('images/','');
-        //                 fs.mkdirSync(path.join(__dirname, 'save', name, 'gallery_gen'));
-        //                 var download = require('image-downloader')
-        //                 var options = {
-        //                     url: url + '/gallery_gen/' + text,
-        //                     dest: path.join(__dirname, 'save', name, 'gallery_gen')
-        //                 }
-        //                 download.image(options)
-        //                     .then(({ filename, image }) => {
-        //                         console.log('File saved to', filename)
-        //                     }).catch((err) => {
-        //                 })
-        //             });
-        //         } catch (err) {}
-        //     });
-        // }
 
-
-        console.log('END');
     });
+
+    // upload on FTP
+    $('#FTPUPLOAD').click(function () {
+
+        $( ".loader-block" ).fadeIn( "slow" );
+
+        HOST = $('#HOST').val();
+        PORT = $('#PORT').val();
+        USERNAME = $('#USERNAME').val();
+        dirOnServer = $('#dirOnServer').val();
+        dirOnPC = $('#dirOnPC').val();
+        PASSWORD = $('#PASSWORD').val();
+
+        console.log(HOST, PORT, USERNAME, dirOnServer, dirOnPC, PASSWORD);
+
+        try {
+
+            var Ftp = new JSFtp({
+                host: HOST,
+                port: PORT,
+                user: USERNAME,
+                pass: PASSWORD
+            });
+
+            Ftp.raw("mkd", "/" + dirOnServer, function(err, data) {
+                if (err) return console.error(err);
+                else upload()
+            });
+
+            function upload() {
+                var config = {
+                    username: Ftp.user,
+                    password: Ftp.pass,
+                    host: Ftp.host,
+                    port: 21,
+                    localRoot: Path.join(__dirname, 'save', name),
+                    remoteRoot: "/" + dirOnServer
+                }
+                ftpDeploy.deploy(config, function(err) {
+                    if (err) $.notify('<strong>ОШИБКА!</strong> проверьте папку на FTP, проверьте доступ FTP... ' + err, { allow_dismiss: false });
+                    else $.notify('<strong>ЗАГРУЗКА УСПЕШЕНА!</strong> проверьте папку ' + dirOnServer, { allow_dismiss: false });
+
+                    $( ".loader-block" ).fadeOut( "slow" );
+                });
+            }
+
+        } catch (err){
+            $( ".loader-block" ).fadeOut( "slow" );
+            $.notify('<strong>ОШИБКА!</strong> проверьте папку на FTP, проверьте доступ FTP... ' + err, { allow_dismiss: false });
+        }
+
+    });
+
+    // auto dir name
+    $( "#NAME" ).keyup(function() {
+        $('#dirOnPC').val($(this).val());
+        $('#dirOnServer').val($(this).val());
+    });
+
+    console.log('END');
+
 });

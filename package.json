@@ -22,13 +22,9 @@
     "website-scraper": "latest",
     "fs": "latest",
     "jQuery": "latest",
-    "gulp": "latest",
-    "electron-windows-installer": "latest",
-    "electron-winstaller": "latest",
+    "jsftp": "latest",
+    "ftp-deploy": "latest",
     "image-downloader": "latest",
     "path": "latest"
-  },
-  "devDependencies": {
-    "electron-installer-windows": "^0.2.0"
   }
 }

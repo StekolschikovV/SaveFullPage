@@ -36,7 +36,49 @@
                         </label>
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-default" id="GET">Спарсить!</button>
+                        <button type="submit" class="btn btn-default" id="GET">Спарсить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Загрузка сайта по FTP
+            </div>
+            <div class="panel-footer">
+                <form role="form" onsubmit="return false">
+                    <div class="form-group">
+                        <label for="URL">Введите HOST: </label>
+                        <input type="text" class="form-control" id="HOST" placeholder="000.000.000.000">
+                    </div>
+                    <div class="form-group">
+                        <label for="NAME">Введите PORT: </label>
+                        <input type="text" class="form-control" id="PORT" placeholder="21" value="21">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="NAME">Введите имя ползователя FTP: </label>
+                        <input type="text" class="form-control" id="USERNAME" placeholder="USER">
+                    </div>
+                    <div class="form-group">
+                        <label for="PASSWORD">Введите пароль от FTP: </label>
+                        <input type="text" class="form-control" id="PASSWORD" placeholder="PASSWORD">
+                    </div>
+                    <div class="form-group">
+                        <label for="dirOnServer">Введите имя папки на сервере: </label>
+                        <input type="text" class="form-control" id="dirOnServer" placeholder="/">
+                    </div>
+                    <div class="form-group">
+                        <label for="dirOnPC">Введите имя папки на локальном ПК: </label>
+                        <input type="text" class="form-control" id="dirOnPC" placeholder="/">
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-default" id="FTPUPLOAD">Загрузить</button>
                     </div>
                 </form>
             </div>
@@ -57,7 +99,7 @@
 <style>
     .loader-block {
         background: #111;
-        position: absolute;
+        position: fixed;
         top: 0;
         width: 100vw;
         height: 100vh;
