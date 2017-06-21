@@ -24,7 +24,11 @@
     "jQuery": "latest",
     "jsftp": "latest",
     "ftp-deploy": "latest",
+    "rimraf": "latest",
+    "child_process": "latest",
     "image-downloader": "latest",
+    "node-cmd": "latest",
+    "fs-extra": "latest",
     "path": "latest"
   }
 }
