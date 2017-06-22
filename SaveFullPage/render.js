@@ -31,6 +31,7 @@ var appInfo = {
     // VARS
     fileName: 'data.json',
     obj: '',
+    lastFaid: '',
     // LINE
     line: function () {
         if (fs.existsSync(appInfo.fileName)) {
@@ -52,14 +53,14 @@ var appInfo = {
     // METHODS
     get: function () {
         url = $('#URL').val(); name = $('#NAME').val();
-        // dir = path.join(__dirname + '../../../', 'save', name);
-        dir = path.join(__dirname, 'save', name);
+        dir = path.join(__dirname + '../../../', 'save', name);
+        // dir = path.join(__dirname, 'save', name);
     }, say: function (text) {
         $.notify(text, { allow_dismiss: false });
         var audio = new Audio(); audio.src = 'viber.mp3'; audio.autoplay = true;
     }, fade: function (e) {
-        if(e == 'fadeOut') $( ".loader-block" ).fadeOut( 'slow' );
-        else $( ".loader-block" ).fadeIn( 'slow' );
+        if(e == 'fadeOut') { $( ".loader-block" ).fadeOut( 'slow' ); appInfo.lastFaid = 'fadeOut'; }
+        else { $( ".loader-block" ).fadeIn( 'slow' ); appInfo.lastFaid = 'fadeIn'; }
     }, readJson: function () {
         jsonfile.readFile(appInfo.fileName, function(err, obj) {
             confAndData = obj;
@@ -104,10 +105,11 @@ var appInfo = {
 
 // --- --- --- appPars
 var appPars = {
-
+    // VARS
+    neadClickPars: false,
     // LINE
     line: function () {
-        $( ".loader-block" ).fadeIn( "slow" );
+        appInfo.fade("fadeIn")
         appInfo.get();
         if (fs.existsSync(dir)) {
             appPars.removeLocalDir(dir);
@@ -136,6 +138,10 @@ var appPars = {
                         fs.writeFile(path.join(dir, 'index.html'), str, function(err) {});
                     });
                 }
+                if(appPars.neadClickPars == true) {
+                    appPars.neadClickPars = false;
+                    $('#FTPTASKER').click();
+                }
             }).catch((err) => { appInfo.say('<strong>ОШИБКА!</strong> ' + err); appInfo.fade("fadeOut"); });
         }
     },
@@ -153,11 +159,11 @@ var appPars = {
 // appPars --- --- ---
 
 // --- --- --- appFtp
-appFtp = {
+var appFtp = {
     // LINE
     line: function () {
         appFtp.get();
-        $( ".loader-block" ).fadeIn( "slow" );
+        appInfo.fade("fadeIn");
         try {
             var Ftp = new JSFtp({ host: HOST, port: PORT, user: USERNAME, pass: PASSWORD });
             Ftp.ls(".", function(err, res) {
@@ -193,11 +199,12 @@ appFtp = {
 // appFtp --- --- ---
 
 // --- --- --- appFtpTwo
-appFtpTwo = {
+var appFtpTwo = {
     // LINE
     line: function () {
         appFtpTwo.get();
-        $( ".loader-block" ).fadeIn( "slow" );
+
+        appInfo.fade("fadeIn");
         try {
             var Ftp = new JSFtp({ host: HOST, port: PORT, user: USERNAME, pass: PASSWORD });
             Ftp.ls(".", function(err, res) {
@@ -232,11 +239,65 @@ appFtpTwo = {
 };
 // appFtpTwo --- --- ---
 
+// --- --- --- appFtpTasker
+var appFtpTasker = {
+    ftpRoundId: [],
+    // LINE
+    line: function () {
+        appInfo.fade('fadeIn');
+        appFtpTasker.checkFtpSelectSection();
+        if(appFtpTasker.ftpRoundId.length == 0) {
+            appInfo.say('<strong>НИЧЕГО НЕТ В ОЧЕРЕДИ!</strong> '); appInfo.fade('fadeOut');
+        } else {
+            appInfo.say('<strong>В ОЧЕРЕДИ ЕСТЬ ЭЛЕМЕНТЫ - </strong> ' + appFtpTasker.ftpRoundId.length);
+            appFtpTasker.clickOnParsBtn();
+        }
+    },
+    // EVENTS
+    events: function () {
+        $('#FTPTASKER').click(function () {
+            appFtpTasker.line();
+        });
+        $('#GETANDFTPTASKER').click(function () {
+            appPars.neadClickPars = true;
+            $('#GET').click();
+        });
+    },
+    // METHODS
+    checkFtpSelectSection: function () {
+        appFtpTasker.ftpRoundId = [];
+        $( ".ftpRound" ).each(function( index ) {
+            if ($(this).is(":checked")) { appFtpTasker.ftpRoundId.push($(this).data('id')); }
+        });
+    }, clickOnParsBtn: function () {
+        $('.' + appFtpTasker.ftpRoundId[0]).click();
+        appFtpTasker.rmCheckBoxSelect(appFtpTasker.ftpRoundId[0])
+        var timer = setInterval(function () {
+            if(appInfo.lastFaid == 'fadeOut') {
+                if(appFtpTasker.ftpRoundId.length > 0){
+                    appFtpTasker.line();
+                } else {
+                    clearTimeout(timer);
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000);
+                }
+            }
+        }, 2000);
+    }, rmCheckBoxSelect: function (id) {
+        $( ".ftpRound" ).each(function( index ) {
+            if ($(this).data('id') == id) { $(this).prop("checked", false); }
+        });
+    }
+}
+// appFtpTwo --- --- ---
+
 $(document).ready(function () {
-    $( ".loader-block" ).fadeOut( "slow" );
+    appInfo.fade("fadeOut");
     appInfo.line();
     appInfo.events();
     appPars.events();
     appFtp.events();
     appFtpTwo.events();
+    appFtpTasker.events();
 });

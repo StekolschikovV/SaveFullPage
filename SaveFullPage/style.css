@@ -86,3 +86,6 @@
 .panel {
     margin-bottom: 0 !important;
 }
+.dropdown-menu.top-btn-gr {
+    left: -113px !important;
+}

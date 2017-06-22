@@ -37,8 +37,29 @@
                             <span class="checkbox-label"> Скачивать видео</span>
                         </label>
                     </div>
+                    <!--<div class="text-right">-->
+                        <!--<button type="submit" class="btn btn-default" id="GET">Спарсить</button>-->
+                    <!--</div>-->
+                    <!--<div class="text-right">-->
+                        <!--<div class="btn-group">-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">Dropdown link</a></li>-->
+                                <!--<li><a href="#">Dropdown link</a></li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
                     <div class="text-right">
-                        <button type="submit" class="btn btn-default" id="GET">Спарсить</button>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" id="GETANDFTPTASKER">Спарсить и загрузить</button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#" id="GET">Спарсить</a></li>
+                                <li><a href="#" id="FTPTASKER">Загрузить на FTP</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -79,8 +100,12 @@
                         <label for="dirOnPC">Введите имя папки на локальном ПК: </label>
                         <input type="text" class="form-control" id="dirOnPC" placeholder="/">
                     </div>
+                    <label class="control checkbox">
+                        <input type="checkbox" class="ftpRound" data-id="btn1" checked>
+                        <span class="checkbox-label"> Использовать при загрузке в очереди</span>
+                    </label>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-default" id="FTPUPLOAD">Загрузить</button>
+                        <button type="submit" class="btn btn-default btn1" id="FTPUPLOAD">Загрузить</button>
                     </div>
                 </form>
             </div>
@@ -121,8 +146,12 @@
                         <label for="dirOnPC_TOW">Введите имя папки на локальном ПК: </label>
                         <input type="text" class="form-control" id="dirOnPC_TOW" placeholder="/">
                     </div>
+                    <label class="control checkbox">
+                        <input type="checkbox" class="ftpRound" data-id="btn2" checked>
+                        <span class="checkbox-label"> Использовать при загрузке в очереди</span>
+                    </label>
                     <div class="text-right">
-                        <button type="submit" class="btn btn-default" id="FTPUPLOAD_TOW">Загрузить</button>
+                        <button type="submit" class="btn btn-default btn2" id="FTPUPLOAD_TOW">Загрузить</button>
                     </div>
                 </form>
             </div>
@@ -130,6 +159,15 @@
     </div>
 </div>
 <!--Загрузка сайта по FTP 2-->
+<!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+        <!--<div class="panel panel-default">-->
+            <!--<div class="text-right">-->
+                <!--<button type="submit" class="btn btn-default" id="FTPTASKER">Загрузить на FTP (очередь)</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!--Прелоадер-->
 <div class="loader-block">
     <div class="loader">
