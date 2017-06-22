@@ -5,7 +5,7 @@ App for parsing websites and automatic uploading to FTP.
  * Parsing of any site with all content (pictures, videos, scripts, styles)
  *  Download to ftp
  *  Ability to disable uploading videos
- *  Ability to configure FTP (port, password, login, pen)
+ *  Ability to configure FTP (port, password, login, dir)
  *  Automatic creation of the configuration file after any change. (Configurations are loaded when the application start)
 ### Running the application
 To run, you need to execute a command
