@@ -2,8 +2,134 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0114d85-31aa-4532-9ed9-2d4d36635cec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/save/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/json.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/rrr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/json.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/lib/rrr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/additional.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/additional23.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/additional24.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/common.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/normalize.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/player.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/scrollbar.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/site.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/style.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/style.min_1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/css/style.min_2.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/3Y_xCyt7TNunMGg0Et2pnj8E0i7KZn-EPnyo3HZu7kw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/5z9jpDJQqVE5bmkRqplJfhsxEYwM7FgeyaSgU71cLG0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/7dSh6BcuqDLzS2qAASIeuj8E0i7KZn-EPnyo3HZu7kw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/7m8l7TlFO-S3VkhHuR0at2Ob2gHztoQeulij-1lvl-8.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/8C2PVL2WIMUnPF90ukjrZQ.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/BP5K8ZAJv9qEbmuFp8RpJetPcIiHO7gbJ1EXQyTeBLw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/Capture it.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/DXI1ORHCpsQm3Vp6mXoaTYraN7vELC11_xip9Rz-hMs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/EInbV5DfGHOiMmvb1Xr-horaN7vELC11_xip9Rz-hMs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/Fl4y0QdOxyyTHEGMXX8kcT8E0i7KZn-EPnyo3HZu7kw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/G1l_KMKj5pga7ZKths0iTfesZW2xOQ-xsNqO47m55DA.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/MEz38VLIFL-t46JUtkIEgC6v49diG_9tVdtCNu5M0Go.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/MTP_ySUJH_bn48VBG8sNSoraN7vELC11_xip9Rz-hMs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Bold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Bold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Bold.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-ExtraBold.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-ExtraBold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-ExtraBold.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-ExtraBold.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/NanumGothic-Regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/OLffGBTaF0XFOW1gnuHF0WOb2gHztoQeulij-1lvl-8.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/OXYTDOzBcXU8MTNBvBHeSfETNPRNVolBcF_UwjGq_RM.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/PRmiXeptR36kaC0GEAetxl1DIE4XHZKVVbKkAUmpPQQ.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/PRmiXeptR36kaC0GEAetxlRROVH9Vvc8xHnAGvvgPQc.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/PRmiXeptR36kaC0GEAetxq6JHp92iES8exGTOIyTn1A.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/PRmiXeptR36kaC0GEAetxsm6z33g0Z9rhmCMv9JmtIA.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/Q-gJrFokeE7JydPpxASt21YMsrE0OGm1FPmk5XnVy_c.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/Q_pTky3Sc3ubRibGToTAYigwe3ZcNEyK1ut-Sjba9Qg.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/RjgO7rYTmqiVp7vzi-Q5UT8E0i7KZn-EPnyo3HZu7kw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/UyYrYy3ltEffJV9QueSi4S4mX3cpNo8MnLri8k21-rs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/Y5yuUJGDLtmYv2_3fMB4fA.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/Zd2E9abXLFGSr9G3YK2MsOC933fdLZhbewWVDyX-fYw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/b9QBgL0iMZfDSpmcXcE8nANHRvH4E1CCxguZf4zS03A.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/b9QBgL0iMZfDSpmcXcE8nFg5CgGLp4EYHKghg5iYRwo.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/bmC0pGMXrhphrZJmniIZpWOb2gHztoQeulij-1lvl-8.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/dazS1PrQQuCxC3iOAJFEJVRROVH9Vvc8xHnAGvvgPQc.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/dazS1PrQQuCxC3iOAJFEJa6JHp92iES8exGTOIyTn1A.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont_1.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/fontawesome-webfont_1.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/g46X4VH_KHOWAAa-HpnGPhsxEYwM7FgeyaSgU71cLG0.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/gk5FxslNkTTHtojXrkp-xGRqrPGLMrTi9b00I6Zi0LA.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/gk5FxslNkTTHtojXrkp-xIs99AcBDkHXW8UNgp8Ipwk.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/isZ-wbCXNKAbnjo6_TwHTj8E0i7KZn-EPnyo3HZu7kw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/jIXlqT1WKafUSwj6s9AzV3Qd_u3WJujL0yvUZ2_uXfD3rGVtsTkPsbDajuO5ueQw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/k3k702ZOKiLJc3WVjuplzIraN7vELC11_xip9Rz-hMs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/lILlYDvubYemzYzN7GbLkIraN7vELC11_xip9Rz-hMs.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/m1uAalIytmLBFXF3PwhxpPesZW2xOQ-xsNqO47m55DA.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/mg0cGfGRUERshzBlvqxeAB1Wm7TI8_m_rqugYSu8QuY.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/mg0cGfGRUERshzBlvqxeAN5W0NczHoYeR79RVkDsNTU.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/oHi30kwQWvpCWqAhzHcCSD8E0i7KZn-EPnyo3HZu7kw.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/t6Nd4cfPRhZP44Q5QAjcC2Ob2gHztoQeulij-1lvl-8.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/xjAJXh38I15wypJXxuGMBmOb2gHztoQeulij-1lvl-8.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/y7lebkjgREBJK96VQi37ZmOb2gHztoQeulij-1lvl-8.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/fonts/yrzXiAvgeQQdopyG8QSg8Q.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/21.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/7ad7929b7e96d69c27df430fdb90b348_280x112.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn-no-active.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn1ukr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn2ukr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn3ukr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/btn4ukr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/bufferIcon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/bufferIcon_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/f77c08aa48c2566807da9e2224f34fd8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/ff0d1f5fc69853370ac9b4bc5327f4db_333.62637362637x460.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/flags_matrix.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/gallery.empty.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/gallery.left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/gallery.left_h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/gallery.right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/gallery.right_h.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/hlight_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/icon-logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/play_butto1n.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/play_butto1n_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/store-arrow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/trailer_play.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/images/ukrbtn.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/hammer.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/jquery-1.11.3.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/screenfull.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/screenfull_1.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/js/screenfull_2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp-win32-ia32/save/v10/null.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/null.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32.zip" afterPath="$PROJECT_DIR$/myapp-win32-ia32.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
@@ -12,8 +138,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32/data.json" afterPath="$PROJECT_DIR$/myapp-win32-ia32/data.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/.idea/workspace.xml" afterPath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/data.json" afterPath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/data.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/index.html" afterPath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/package.json" afterPath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/render.js" afterPath="$PROJECT_DIR$/myapp-win32-ia32/resources/app/render.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/render.js" afterPath="$PROJECT_DIR$/render.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,41 +158,9 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/save/v12/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-611">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/save/v26/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="json.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/json.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -80,11 +175,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="null.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/null.html">
+      <file leaf-file-name="helpFunction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/helpFunction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -93,18 +188,8 @@
       <file leaf-file-name="render.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/render.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="184" column="42" lean-forward="false" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/save/v27/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-611">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="308" column="74" lean-forward="false" selection-start-line="308" selection-start-column="40" selection-end-line="308" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -113,8 +198,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="39" column="66" lean-forward="false" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+            <state relative-caret-position="114">
+              <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -153,6 +238,7 @@
       <find>clickOnParsBtn</find>
       <find>Ftp</find>
       <find>JSFtp</find>
+      <find>HF.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,13 +251,14 @@
         <option value="$PROJECT_DIR$/2.html" />
         <option value="$PROJECT_DIR$/1.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/save/test.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/save/v13/index.php" />
         <option value="$PROJECT_DIR$/save/v17/index.php" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/data.json" />
+        <option value="$PROJECT_DIR$/lib/helpFunction.js" />
+        <option value="$PROJECT_DIR$/main.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/render.js" />
       </list>
     </option>
@@ -277,23 +364,25 @@
       <workItem from="1498635698496" duration="15390000" />
       <workItem from="1498657404850" duration="84000" />
       <workItem from="1498668811924" duration="612000" />
-      <workItem from="1498825711259" duration="8877000" />
+      <workItem from="1498825711259" duration="12710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25863000" />
+    <option name="totallyTimeSpent" value="29696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11089987" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288948" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32756326" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -301,7 +390,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -331,21 +419,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/render.js</url>
-          <line>306</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/render.js</url>
-          <line>245</line>
-          <properties />
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -574,30 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="39" column="66" lean-forward="false" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/save/v27/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-611">
@@ -626,9 +676,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -640,10 +688,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/save/v31/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/helpFunction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/render.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="184" column="42" lean-forward="false" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
+        <state relative-caret-position="210">
+          <caret line="308" column="74" lean-forward="false" selection-start-line="308" selection-start-column="40" selection-end-line="308" selection-end-column="74" />
           <folding />
         </state>
       </provider>

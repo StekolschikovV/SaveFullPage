@@ -22,8 +22,10 @@ var cmd=require('node-cmd');
 var jsonfile = require('jsonfile');
 var del = require('del');
 
+var HF = require('./lib/helpFunction');
+
 // --- --- --- conf and data
-var confAndData = {}
+var confAndData = {};
 // conf and data --- --- ---
 
 // --- --- --- appInfo
@@ -50,6 +52,7 @@ var appInfo = {
         });
         appInfo.get();
         $( "input" ).keyup(function() { appInfo.writeToJson(); });
+        $( "input" ).change(function() { appInfo.writeToJson(); });
     },
     // METHODS
     get: function () {
@@ -82,6 +85,7 @@ var appInfo = {
         $('#USERNAME_TOW').val(confAndData['USERNAME_TOW']);
         $('#dirOnServer_TOW').val(confAndData['dirOnServer_TOW']);
         $('#dirOnPC_TOW').val(confAndData['dirOnPC_TOW']);
+        $('#minifyHtml').prop('checked', confAndData['minifyHtml']);
     }, writeToJson: function () {
         var writeToJsonObj = {
             NAME: $('#NAME').val(),
@@ -97,7 +101,8 @@ var appInfo = {
             PASSWORD_TOW: $('#PASSWORD_TOW').val(),
             USERNAME_TOW: $('#USERNAME_TOW').val(),
             dirOnServer_TOW: $('#dirOnServer_TOW').val(),
-            dirOnPC_TOW: $('#dirOnPC_TOW').val()
+            dirOnPC_TOW: $('#dirOnPC_TOW').val(),
+            minifyHtml: $('#minifyHtml').prop('checked')
         }
         jsonfile.writeFile(appInfo.fileName, writeToJsonObj, function (err) { });
     }
@@ -173,8 +178,17 @@ var appFtp = {
             Ftp.ls(".", function(err, res) {
                 var suchFolderIs = false;
                 res.forEach(function(file) { if(file.name == name) { suchFolderIs = true; } });
-                if (suchFolderIs == false) mkd();
-                else upload();
+                if(suchFolderIs){
+                    var result = confirm('На хочтинге есть уже такая папка. Заменить ее?');
+                    if(result){
+                        upload();
+                    } else {
+                        location.reload();
+                    }
+                } else {
+                    if (suchFolderIs == false) mkd();
+                    else upload();
+                }
             });
             function mkd() {
                 Ftp.raw("mkd", "/" + dirOnServer, function(err, data) {
@@ -223,8 +237,13 @@ var appFtpTwo = {
                     else { appInfo.say('<strong>СОЗДАНА НОВАЯ ПАПКА НА FTP!</strong>'); upload(); } });
             }
             function upload() {
-                var config = { username: Ftp.user, password: Ftp.pass, host: Ftp.host,  port: Ftp.port,
-                    localRoot: dir, remoteRoot: "/" + dirOnServer };
+                var config = {
+                    username: Ftp.user,
+                    password: Ftp.pass,
+                    host: Ftp.host,
+                    port: Ftp.port,
+                    localRoot: dir,
+                    remoteRoot: "/" + dirOnServer };
                 ftpDeploy.deploy(config, function(err) {
                     if (err) { appInfo.say('<strong>ОШИБКА СОЗДНАИЯ ПАПКА НА FTP!</strong> ' + err); appInfo.fade('fadeOut'); }
                     else { appInfo.say('<strong>СОЗДАНА НОВАЯ ПАПКА НА FTP!</strong>'); appInfo.fade('fadeOut'); }
@@ -279,7 +298,6 @@ var appFtpTasker = {
             fs.readFile(path.join(dir, 'index.html'), 'utf8', function (err, data) {
                 for (var i = 0; appInfo.linksToPicturesThatNeedToBeChanged.length > i; i++) {
                     data = data.replace( appInfo.linksToPicturesThatNeedToBeChanged[i], 'http://imgkonst1.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
-
                 }
                 if(appPars.tmpVideoUrl != '')
                     data = data.replace(appPars.tmpVideoUrl.filename,appPars.tmpVideoUrl.url);
@@ -287,6 +305,8 @@ var appFtpTasker = {
                 fs.unlink(path.join(dir, 'index.html'), function(err, result) {
                     if (fs.existsSync( path.join(dir, 'index.php') ))
                         fs.unlink(path.join(dir, 'index.php'), function(err, result) {
+                            if( confAndData.minifyHtml )
+                                data = HF.minifyHtml(data);
                             fs.writeFile(path.join(dir, 'index.php'), data, function(err) {
                                 appFtpTasker.clickOnParsBtn();
                             });
@@ -295,17 +315,19 @@ var appFtpTasker = {
 
             });
         } else if(appFtpTasker.ftpRoundId.length == 1){
-            fs.readFile(path.join(dir, 'index.php'), 'utf8', function (err, data) {
-                data = data.replace( /imgkonst1/g, 'imgkonst2' );
-                appPars.tmpVideoUrl == '';
-                appInfo.linksToPicturesThatNeedToBeChangedTow = [];
-                fs.writeFile(path.join(dir, 'index.php'), data, function(err) {
-                    appFtpTasker.clickOnParsBtn();
-                });
-
+            // прочти файл
+            var data = HF.readFile( path.join(dir, 'index.php') );
+            // сожми файл
+            if( confAndData.minifyHtml )
+                data = HF.minifyHtml(data);
+            // замени текст
+            data = data.replace( /imgkonst1/g, 'imgkonst2' );
+            appPars.tmpVideoUrl == '';
+            // запиши в файл
+            fs.writeFile(path.join(dir, 'index.php'), data, function(err) {
+                appFtpTasker.clickOnParsBtn();
             });
         }
-
     }, clickOnParsBtn: function () {
         $('.' + appFtpTasker.ftpRoundId[0]).click();
         appFtpTasker.rmCheckBoxSelect(appFtpTasker.ftpRoundId[0])
@@ -326,7 +348,7 @@ var appFtpTasker = {
             if ($(this).data('id') == id) { $(this).prop("checked", false); }
         });
     }
-}
+};
 // appFtpTwo --- --- ---
 
 $(document).ready(function () {
@@ -338,10 +360,3 @@ $(document).ready(function () {
     appFtpTwo.events();
     appFtpTasker.events();
 });
-
-
-
-
-// var aaa = require('./lib/rrr.js');
-// console.log(aaa)
-// console.log(aaa.aaa)

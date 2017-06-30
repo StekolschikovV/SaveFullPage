@@ -2,14 +2,24 @@ var electron = require('electron');
 var app = electron.app;
 var BrowserWindow = electron.BrowserWindow;
 
-app.on('ready', () => {
-    appWindow = new BrowserWindow({
-        width: 600,
-        height: 846
+var isDev = false;
+process.argv.forEach((val, index) => {
+    if( val == 'dev')
+        isDev = true;
+});
+
+function start() {
+    app.on('ready', () => {
+        appWindow = new BrowserWindow({
+            width: 600,
+            height: 846
+        });
+        appWindow.loadURL(`file://${__dirname}/index.html`);
+        if(isDev)
+            appWindow.webContents.openDevTools();
     });
-    appWindow.loadURL(`file://${__dirname}/index.html`);
-    appWindow.webContents.openDevTools();
-});
-app.on('window-all-closed', function() {
-    app.quit();
-});
+    app.on('window-all-closed', function() {
+        app.quit();
+    });
+}
+start();
