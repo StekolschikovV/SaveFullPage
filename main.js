@@ -8,7 +8,7 @@ app.on('ready', () => {
         height: 846
     });
     appWindow.loadURL(`file://${__dirname}/index.html`);
-    // appWindow.webContents.openDevTools();
+    appWindow.webContents.openDevTools();
 });
 app.on('window-all-closed', function() {
     app.quit();

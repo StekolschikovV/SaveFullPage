@@ -31,6 +31,7 @@
     "fs-extra": "latest",
     "jsonfile": "latest",
     "del": "latest",
+    "html-minifier": "latest",
     "path": "latest"
   }
 }

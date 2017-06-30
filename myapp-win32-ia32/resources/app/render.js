@@ -33,7 +33,6 @@ var appInfo = {
     obj: '',
     lastFaid: '',
     linksToPicturesThatNeedToBeChanged: [],
-    linksToPicturesThatNeedToBeChangedTow: [],
     // LINE
     line: function () {
         if (fs.existsSync(appInfo.fileName)) {
@@ -280,12 +279,11 @@ var appFtpTasker = {
             fs.readFile(path.join(dir, 'index.html'), 'utf8', function (err, data) {
                 for (var i = 0; appInfo.linksToPicturesThatNeedToBeChanged.length > i; i++) {
                     data = data.replace( appInfo.linksToPicturesThatNeedToBeChanged[i], 'http://imgkonst1.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
-                    appInfo.linksToPicturesThatNeedToBeChangedTow.push( 'http://imgkonst1.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
+
                 }
                 if(appPars.tmpVideoUrl != '')
                     data = data.replace(appPars.tmpVideoUrl.filename,appPars.tmpVideoUrl.url);
                 appPars.tmpVideoUrl == '';
-                appInfo.linksToPicturesThatNeedToBeChangedTow = [];
                 fs.unlink(path.join(dir, 'index.html'), function(err, result) {
                     if (fs.existsSync( path.join(dir, 'index.php') ))
                         fs.unlink(path.join(dir, 'index.php'), function(err, result) {
@@ -298,13 +296,7 @@ var appFtpTasker = {
             });
         } else if(appFtpTasker.ftpRoundId.length == 1){
             fs.readFile(path.join(dir, 'index.php'), 'utf8', function (err, data) {
-                console.log(path.join(dir, 'index.php'))
-                console.log(data)
-                for (var i = 0; appInfo.linksToPicturesThatNeedToBeChangedTow.length > i; i++) {
-                    data = data.replace( appInfo.linksToPicturesThatNeedToBeChangedTow[i], 'http://imgkonst2.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
-                }
-                if(appPars.tmpVideoUrl != '')
-                    data = data.replace(appPars.tmpVideoUrl.filename,appPars.tmpVideoUrl.url);
+                data = data.replace( /imgkonst1/g, 'imgkonst2' );
                 appPars.tmpVideoUrl == '';
                 appInfo.linksToPicturesThatNeedToBeChangedTow = [];
                 fs.writeFile(path.join(dir, 'index.php'), data, function(err) {

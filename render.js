@@ -21,9 +21,10 @@ var exec = require('child_process').exec;
 var cmd=require('node-cmd');
 var jsonfile = require('jsonfile');
 var del = require('del');
+var minify = require('html-minifier').minify;
 
 // --- --- --- conf and data
-var confAndData = {}
+var confAndData = {};
 // conf and data --- --- ---
 
 // --- --- --- appInfo
@@ -33,7 +34,6 @@ var appInfo = {
     obj: '',
     lastFaid: '',
     linksToPicturesThatNeedToBeChanged: [],
-    linksToPicturesThatNeedToBeChangedTow: [],
     // LINE
     line: function () {
         if (fs.existsSync(appInfo.fileName)) {
@@ -51,12 +51,13 @@ var appInfo = {
         });
         appInfo.get();
         $( "input" ).keyup(function() { appInfo.writeToJson(); });
+        $( "input" ).change(function() { appInfo.writeToJson(); });
     },
     // METHODS
     get: function () {
         url = $('#URL').val(); name = $('#NAME').val();
-        dir = path.join(__dirname + '../../../', 'save', name);
-        // dir = path.join(__dirname, 'save', name);
+        // dir = path.join(__dirname + '../../../', 'save', name);
+        dir = path.join(__dirname, 'save', name);
     }, say: function (text) {
         $.notify(text, { allow_dismiss: false });
         var audio = new Audio(); audio.src = 'viber.mp3'; audio.autoplay = true;
@@ -83,6 +84,7 @@ var appInfo = {
         $('#USERNAME_TOW').val(confAndData['USERNAME_TOW']);
         $('#dirOnServer_TOW').val(confAndData['dirOnServer_TOW']);
         $('#dirOnPC_TOW').val(confAndData['dirOnPC_TOW']);
+        $('#minifyHtml').prop('checked', confAndData['minifyHtml']);
     }, writeToJson: function () {
         var writeToJsonObj = {
             NAME: $('#NAME').val(),
@@ -98,7 +100,8 @@ var appInfo = {
             PASSWORD_TOW: $('#PASSWORD_TOW').val(),
             USERNAME_TOW: $('#USERNAME_TOW').val(),
             dirOnServer_TOW: $('#dirOnServer_TOW').val(),
-            dirOnPC_TOW: $('#dirOnPC_TOW').val()
+            dirOnPC_TOW: $('#dirOnPC_TOW').val(),
+            minifyHtml: $('#minifyHtml').prop('checked')
         }
         jsonfile.writeFile(appInfo.fileName, writeToJsonObj, function (err) { });
     }
@@ -174,8 +177,17 @@ var appFtp = {
             Ftp.ls(".", function(err, res) {
                 var suchFolderIs = false;
                 res.forEach(function(file) { if(file.name == name) { suchFolderIs = true; } });
-                if (suchFolderIs == false) mkd();
-                else upload();
+                if(suchFolderIs){
+                    var result = confirm('На хочтинге есть уже такая папка. Заменить ее?');
+                    if(result){
+                        upload();
+                    } else {
+                        location.reload();
+                    }
+                } else {
+                    if (suchFolderIs == false) mkd();
+                    else upload();
+                }
             });
             function mkd() {
                 Ftp.raw("mkd", "/" + dirOnServer, function(err, data) {
@@ -224,8 +236,13 @@ var appFtpTwo = {
                     else { appInfo.say('<strong>СОЗДАНА НОВАЯ ПАПКА НА FTP!</strong>'); upload(); } });
             }
             function upload() {
-                var config = { username: Ftp.user, password: Ftp.pass, host: Ftp.host,  port: Ftp.port,
-                    localRoot: dir, remoteRoot: "/" + dirOnServer };
+                var config = {
+                    username: Ftp.user,
+                    password: Ftp.pass,
+                    host: Ftp.host,
+                    port: Ftp.port,
+                    localRoot: dir,
+                    remoteRoot: "/" + dirOnServer };
                 ftpDeploy.deploy(config, function(err) {
                     if (err) { appInfo.say('<strong>ОШИБКА СОЗДНАИЯ ПАПКА НА FTP!</strong> ' + err); appInfo.fade('fadeOut'); }
                     else { appInfo.say('<strong>СОЗДАНА НОВАЯ ПАПКА НА FTP!</strong>'); appInfo.fade('fadeOut'); }
@@ -280,15 +297,32 @@ var appFtpTasker = {
             fs.readFile(path.join(dir, 'index.html'), 'utf8', function (err, data) {
                 for (var i = 0; appInfo.linksToPicturesThatNeedToBeChanged.length > i; i++) {
                     data = data.replace( appInfo.linksToPicturesThatNeedToBeChanged[i], 'http://imgkonst1.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
-                    appInfo.linksToPicturesThatNeedToBeChangedTow.push( 'http://imgkonst1.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
                 }
                 if(appPars.tmpVideoUrl != '')
                     data = data.replace(appPars.tmpVideoUrl.filename,appPars.tmpVideoUrl.url);
                 appPars.tmpVideoUrl == '';
-                appInfo.linksToPicturesThatNeedToBeChangedTow = [];
                 fs.unlink(path.join(dir, 'index.html'), function(err, result) {
                     if (fs.existsSync( path.join(dir, 'index.php') ))
                         fs.unlink(path.join(dir, 'index.php'), function(err, result) {
+                            if( confAndData.minifyHtml ){
+                                data = minify( data , {
+                                    conservativeCollapse: true,
+                                    collapseWhitespace: true,
+                                    trimCustomFragments: true,
+                                    useShortDoctype: true,
+                                    collapseInlineTagWhitespace: true,
+                                    // removeEmptyElements: true,
+                                    removeComments: true,
+                                    processConditionalComments: true,
+                                    removeEmptyAttributes: true,
+                                    removeRedundantAttributes: true,
+                                    includeAutoGeneratedTags: true,
+                                    html5: true,
+                                    minifyCSS: true,
+                                    minifyJS: true,
+                                    preserveLineBreaks: true
+                                });
+                            }
                             fs.writeFile(path.join(dir, 'index.php'), data, function(err) {
                                 appFtpTasker.clickOnParsBtn();
                             });
@@ -298,15 +332,8 @@ var appFtpTasker = {
             });
         } else if(appFtpTasker.ftpRoundId.length == 1){
             fs.readFile(path.join(dir, 'index.php'), 'utf8', function (err, data) {
-                console.log(path.join(dir, 'index.php'))
-                console.log(data)
-                for (var i = 0; appInfo.linksToPicturesThatNeedToBeChangedTow.length > i; i++) {
-                    data = data.replace( appInfo.linksToPicturesThatNeedToBeChangedTow[i], 'http://imgkonst2.pw/' + name + '/' + appInfo.linksToPicturesThatNeedToBeChanged[i] );
-                }
-                if(appPars.tmpVideoUrl != '')
-                    data = data.replace(appPars.tmpVideoUrl.filename,appPars.tmpVideoUrl.url);
+                data = data.replace( /imgkonst1/g, 'imgkonst2' );
                 appPars.tmpVideoUrl == '';
-                appInfo.linksToPicturesThatNeedToBeChangedTow = [];
                 fs.writeFile(path.join(dir, 'index.php'), data, function(err) {
                     appFtpTasker.clickOnParsBtn();
                 });
