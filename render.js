@@ -108,6 +108,7 @@ var appInfo = {
         $('#dirOnServer_TOW').val(confAndData['dirOnServer_TOW']);
         $('#dirOnPC_TOW').val(confAndData['dirOnPC_TOW']);
         $('#minifyHtml').prop('checked', confAndData['minifyHtml']);
+        $('#compressImg').prop('checked', confAndData['compressImg']);
         $('#regXTwoFrom').val(confAndData['regXTwoFrom']);
         $('#regXTwoTo').val(confAndData['regXTwoTo']);
         $('#regXOneFrom').val(confAndData['regXOneFrom']);
@@ -138,6 +139,7 @@ var appInfo = {
             dirOnServer_TOW: $('#dirOnServer_TOW').val(),
             dirOnPC_TOW: $('#dirOnPC_TOW').val(),
             minifyHtml: $('#minifyHtml').prop('checked'),
+            compressImg: $('#compressImg').prop('checked'),
             regXTwoFrom: $('#regXTwoFrom').val(),
             regXTwoTo: $('#regXTwoTo').val(),
             regXOneFrom: $('#regXOneFrom').val(),
@@ -168,6 +170,7 @@ var appPars = {
     line: function () {
         appInfo.fade("fadeIn")
         appInfo.get();
+        console.log('++++++++++++++++++++++++++++++++++', dir)
         if (fs.existsSync(dir)) {
             appPars.removeLocalDir(dir);
         }
@@ -417,6 +420,8 @@ var appFtpTasker = {
         if (appFtpTasker.ftpRoundId.length == 2) {
             console.log("---");
             var data = HF.readFile(path.join(dir, 'index.html'));
+            if (confAndData.compressImg)
+                HF.compressImg(path.join(dir, 'images'));
             data = HF.replaceText(data, confAndData.regXOneFrom, confAndData.regXOneTo);
             data = HF.replaceText(data, confAndData.regXOneTwoFrom, confAndData.regXOneTwoTo);
             data = HF.replaceTextDir(data, name);
@@ -433,6 +438,7 @@ var appFtpTasker = {
                 if (confAndData.minifyHtml)
                     data = HF.minifyHtml(data);
             } catch (err) {
+                console.log(err)
                 data = tempData;
             }
             console.log("---");
@@ -496,9 +502,9 @@ $(document).ready(function () {
 });
 
 
-// var  ipcRenderer = require('electron').ipcRenderer
-// console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
-//
-// ipcRenderer.send('asynchronous-message', 'ping')
-//
-
+// var ipcRenderer = require('electron').ipcRenderer
+// ipcRenderer.on('asynchronous-reply', (event, arg) => {
+//     if(arg == 'dev')
+//         dir = path.join(__dirname, 'save1', name);
+// })
+// ipcRenderer.send('asynchronous-message', 'ping');

@@ -5,8 +5,12 @@ var ipcMain = electron.ipcMain;
 
 var isDev = false;
 process.argv.forEach((val, index) => {
-    if( val == 'dev')
+    if( val == 'dev'){
         isDev = true;
+        // ipcMain.on('asynchronous-message', (event, arg) => {
+        //     event.sender.send('asynchronous-reply', 'dev')
+        // })
+    }
 });
 
 var appWindow;
@@ -25,13 +29,3 @@ function start() {
     });
 }
 start();
-
-
-
-
-// ipcMain.on('synchronous-message', (event, arg) => {
-//     console.log(arg)  // prints "ping"
-//
-//     event.returnValue = true;
-// })
-

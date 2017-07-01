@@ -32,6 +32,9 @@
     "jsonfile": "latest",
     "del": "latest",
     "html-minifier": "latest",
+    "imagemin": "latest",
+    "imagemin-jpegtran": "latest",
+    "imagemin-pngquant": "latest",
     "path": "latest"
   }
 }
