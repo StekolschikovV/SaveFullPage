@@ -415,6 +415,7 @@ var appFtpTasker = {
         });
     }, preClickOnParsBt: function () {
         if (appFtpTasker.ftpRoundId.length == 2) {
+            console.log("---");
             var data = HF.readFile(path.join(dir, 'index.html'));
             data = HF.replaceText(data, confAndData.regXOneFrom, confAndData.regXOneTo);
             data = HF.replaceText(data, confAndData.regXOneTwoFrom, confAndData.regXOneTwoTo);
@@ -423,20 +424,31 @@ var appFtpTasker = {
             data = HF.appendJsToFinish(data, confAndData.appendJsToFinish);
             data = HF.appendCssToStart(data, confAndData.appendCssToStart);
             data = HF.appendCssToFinish(data, confAndData.appendCssToFinish);
+            console.log("---");
             if (appPars.tmpVideoUrl != '')
                 data = data.replace(appPars.tmpVideoUrl.filename, appPars.tmpVideoUrl.url);
-            if (confAndData.minifyHtml)
-                data = HF.minifyHtml(data);
+            console.log("---");
+            var tempData = data;
+            try {
+                if (confAndData.minifyHtml)
+                    data = HF.minifyHtml(data);
+            } catch (err) {
+                data = tempData;
+            }
+            console.log("---");
             appPars.tmpVideoUrl = '';
             fs.unlink(path.join(dir, 'index.html'), function (err, result) {
                 if (fs.existsSync(path.join(dir, 'index.php')))
+                    console.log("---");
                     fs.unlink(path.join(dir, 'index.php'), function (err, result) {
                         fs.writeFile(path.join(dir, 'index.php'), data, function (err) {
+                            console.log("---");
                             appFtpTasker.clickOnParsBtn();
                         });
                     });
             });
         } else if (appFtpTasker.ftpRoundId.length == 1) {
+            console.log("---");
             // прочти файл
             var data = HF.readFile(path.join(dir, 'index.php'));
             // замени текст
