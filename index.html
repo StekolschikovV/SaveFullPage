@@ -14,22 +14,34 @@
     <script>if (window.module) module = window.module;</script>
 </head>
 <body>
-<!--Парсинг сайта-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="panel panel-default">
+<div class="panel-group" id="accordion">
+    <!--Парсинг сайта-->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#accordionMAIN">
+                    Парсинг сайта
+                </a>
+            </h4>
+        </div>
+        <div id="accordionMAIN" class="panel-collapse collapse  in">
             <div class="panel-body">
-                Парсинг сайта
-            </div>
-            <div class="panel-footer">
                 <form role="form" onsubmit="return false">
                     <div class="form-group">
-                        <label for="URL">Введите URL: </label>
-                        <input type="text" class="form-control" id="URL" placeholder="https://www.google.com">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="URL">Введите URL: </label>
+                                <input type="text" class="form-control" id="URL" placeholder="https://www.google.com">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="NAME">Введите пароль от FTP: </label>
+                                <input type="text" class="form-control" id="NAME" placeholder="My first dir">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="NAME">Введите имя папки: </label>
-                        <input type="text" class="form-control" id="NAME" placeholder="My first dir">
+                        <label for="regInvertedFrom">Заменить инвертируемую ссылку на оригинальную: </label>
+                        <input type="text" class="form-control" id="regInvertedFrom">
                     </div>
                     <div class="form-group">
                         <label class="control checkbox">
@@ -57,46 +69,109 @@
             </div>
         </div>
     </div>
-</div>
-<!--Парсинг сайта-->
-<!--Загрузка сайта по FTP 1-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="panel panel-default">
+    <!--Парсинг сайта-->
+    <!--CODE-->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#accordionCODE">
+                    Добавление кода к старнице
+                </a>
+            </h4>
+        </div>
+        <div id="accordionCODE" class="panel-collapse collapse">
             <div class="panel-body">
-                Загрузка сайта по FTP
+                <div class="form-group">
+                    <label for="appendJsToStart">Добавить JS в начало кода: </label>
+                    <textarea class="form-control" rows="3" id="appendJsToStart"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="appendJsToFinish">Добавить JS в конец кода: </label>
+                    <textarea class="form-control" rows="3" id="appendJsToFinish"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="appendCssToStart">Добавить CSS в начало кода: </label>
+                    <textarea class="form-control" rows="3" id="appendCssToStart"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="appendCssToFinish">Добавить CSS в конец кода: </label>
+                    <textarea class="form-control" rows="3" id="appendCssToFinish"></textarea>
+                </div>
             </div>
-            <div class="panel-footer">
+        </div>
+    </div>
+    <!--CODE-->
+    <!--Загрузка сайта по FTP 1-->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#accordionFTP">
+                    FTP 1
+                </a>
+            </h4>
+        </div>
+        <div id="accordionFTP" class="panel-collapse collapse">
+            <div class="panel-body">
                 <form role="form" onsubmit="return false">
                     <div class="form-group">
-                        <label for="HOST">Введите HOST: </label>
-                        <input type="text" class="form-control" id="HOST" placeholder="000.000.000.000">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="HOST">Введите HOST: </label>
+                                <input type="text" class="form-control" id="HOST" placeholder="000.000.000.000">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="PORT">Введите пароль от FTP: </label>
+                                <input type="text" class="form-control" id="PORT" placeholder="21" value="21">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="PORT">Введите PORT: </label>
-                        <input type="text" class="form-control" id="PORT" placeholder="21" value="21">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="USERNAME">Введите имя ползователя FTP: </label>
+                                <input type="text" class="form-control" id="USERNAME" placeholder="USER">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="PASSWORD">Введите пароль от FTP: </label>
+                                <input type="text" class="form-control" id="PASSWORD" placeholder="PASSWORD">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="USERNAME">Введите имя ползователя FTP: </label>
-                        <input type="text" class="form-control" id="USERNAME" placeholder="USER">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="dirOnServer">Введите имя папки на сервере: </label>
+                                <input type="text" class="form-control" id="dirOnServer" placeholder="/">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="dirOnPC">Введите имя папки на локальном ПК: </label>
+                                <input type="text" class="form-control" id="dirOnPC" placeholder="/">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="PASSWORD">Введите пароль от FTP: </label>
-                        <input type="text" class="form-control" id="PASSWORD" placeholder="PASSWORD">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="regXOneFrom">Заменить что: </label>
+                                <input type="text" class="form-control" id="regXOneFrom">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="regXOneTo">Заменить на что: </label>
+                                <input type="text" class="form-control" id="regXOneTo">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="dirOnServer">Введите имя папки на сервере: </label>
-                        <input type="text" class="form-control" id="dirOnServer" placeholder="/">
-                    </div>
-                    <div class="form-group">
-                        <label for="dirOnPC">Введите имя папки на локальном ПК: </label>
-                        <input type="text" class="form-control" id="dirOnPC" placeholder="/">
-                    </div>
-                    <div class="form-group">
-                        <label for="regXOneFrom">Заменить что: </label>
-                        <input type="text" class="form-control" id="regXOneFrom">
-                        <label for="regXOneTo">Заменить на что: </label>
-                        <input type="text" class="form-control" id="regXOneTo">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="regXOneTwoFrom">Заменить что: </label>
+                                <input type="text" class="form-control" id="regXOneTwoFrom">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="regXOneTwoTo">Заменить на что: </label>
+                                <input type="text" class="form-control" id="regXOneTwoTo">
+                            </div>
+                        </div>
                     </div>
                     <label class="control checkbox">
                         <input type="checkbox" class="ftpRound" data-id="btn1" checked>
@@ -109,46 +184,78 @@
             </div>
         </div>
     </div>
-</div>
-<!--Загрузка сайта по FTP 1-->
-<!--Загрузка сайта по FTP 2-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="panel panel-default">
+    <!--Загрузка сайта по FTP 1-->
+    <!--Загрузка сайта по FTP 2-->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#accordionFTP2">
+                    FTP 2
+                </a>
+            </h4>
+        </div>
+        <div id="accordionFTP2" class="panel-collapse collapse">
             <div class="panel-body">
-                Загрузка сайта по FTP 2
-            </div>
-            <div class="panel-footer">
                 <form role="form" onsubmit="return false">
                     <div class="form-group">
-                        <label for="HOST_TOW">Введите HOST: </label>
-                        <input type="text" class="form-control" id="HOST_TOW" placeholder="000.000.000.000">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="HOST_TOW">Введите HOST:  </label>
+                                <input type="text" class="form-control" id="HOST_TOW" placeholder="000.000.000.000">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="PORT_TOW">Введите PORT: </label>
+                                <input type="text" class="form-control" id="PORT_TOW" value="21" placeholder="21">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="PORT_TOW">Введите PORT: </label>
-                        <input type="text" class="form-control" id="PORT_TOW" placeholder="21" value="21">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="USERNAME_TOW">Введите имя ползователя FTP: </label>
+                                <input type="text" class="form-control" id="USERNAME_TOW" placeholder="USER">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="PASSWORD_TOW">Введите пароль от FTP: </label>
+                                <input type="text" class="form-control" id="PASSWORD_TOW" placeholder="PASSWORD">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="USERNAME_TOW">Введите имя ползователя FTP: </label>
-                        <input type="text" class="form-control" id="USERNAME_TOW" placeholder="USER">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="dirOnServer_TOW">Введите имя папки на сервере: </label>
+                                <input type="text" class="form-control" id="dirOnServer_TOW" placeholder="/">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="dirOnPC_TOW">Введите имя папки на локальном ПК: </label>
+                                <input type="text" class="form-control" id="dirOnPC_TOW" placeholder="/">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="PASSWORD_TOW">Введите пароль от FTP: </label>
-                        <input type="text" class="form-control" id="PASSWORD_TOW" placeholder="PASSWORD">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="regXTwoFrom">Заменить что: </label>
+                                <input type="text" class="form-control" id="regXTwoFrom">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="regXTwoTo">Заменить на что: </label>
+                                <input type="text" class="form-control" id="regXTwoTo">
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="dirOnServer_TOW">Введите имя папки на сервере: </label>
-                        <input type="text" class="form-control" id="dirOnServer_TOW" placeholder="/">
-                    </div>
-                    <div class="form-group">
-                        <label for="dirOnPC_TOW">Введите имя папки на локальном ПК: </label>
-                        <input type="text" class="form-control" id="dirOnPC_TOW" placeholder="/">
-                    </div>
-                    <div class="form-group">
-                        <label for="regXTwoFrom">Заменить что: </label>
-                        <input type="text" class="form-control" id="regXTwoFrom">
-                        <label for="regXTwoTo">Заменить на что: </label>
-                        <input type="text" class="form-control" id="regXTwoTo">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label for="regXTwoTwoFrom">Заменить что: </label>
+                                <input type="text" class="form-control" id="regXTwoTwoFrom">
+                            </div>
+                            <div class="col-xs-6">
+                                <label for="regXTwoTwoTo">Заменить на что: </label>
+                                <input type="text" class="form-control" id="regXTwoTwoTo">
+                            </div>
+                        </div>
                     </div>
                     <label class="control checkbox">
                         <input type="checkbox" class="ftpRound" data-id="btn2" checked>
@@ -161,8 +268,9 @@
             </div>
         </div>
     </div>
+    <!--Загрузка сайта по FTP 2-->
 </div>
-<!--Загрузка сайта по FTP 2-->
+
 
 <!--Прелоадер-->
 <div class="loader-block">
@@ -174,6 +282,7 @@
         <div class="circle"></div>
     </div>
 </div>
+
 <!--Прелоадер-->
 <script> require('./render.js'); </script>
 </body>
