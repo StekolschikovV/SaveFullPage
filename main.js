@@ -21,8 +21,8 @@ function start() {
             height: 800
         });
         appWindow.loadURL(`file://${__dirname}/index.html`);
-        if(isDev)
-            appWindow.webContents.openDevTools();
+        // if(isDev)
+        //     appWindow.webContents.openDevTools();
     });
     app.on('window-all-closed', function() {
         app.quit();

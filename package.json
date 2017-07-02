@@ -21,20 +21,14 @@
     "electron": "latest",
     "website-scraper": "latest",
     "fs": "latest",
-    "jQuery": "latest",
     "jsftp": "latest",
     "ftp-deploy": "latest",
-    "rimraf": "latest",
-    "child_process": "latest",
-    "image-downloader": "latest",
-    "node-cmd": "latest",
     "fs-extra": "latest",
     "jsonfile": "latest",
-    "del": "latest",
     "html-minifier": "latest",
-    "imagemin": "latest",
-    "imagemin-jpegtran": "latest",
-    "imagemin-pngquant": "latest",
+    "gulp": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-image": "latest",
     "path": "latest"
   }
 }

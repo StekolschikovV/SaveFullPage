@@ -17,10 +17,7 @@ var fsextra = require("fs-extra");
 var Path = path;
 var FtpDeploy = require('ftp-deploy');
 var ftpDeploy = new FtpDeploy();
-var exec = require('child_process').exec;
-var cmd = require('node-cmd');
 var jsonfile = require('jsonfile');
-var del = require('del');
 var HF = require('./lib/helpFunction');
 
 // --- --- --- conf and data
@@ -72,6 +69,7 @@ var appInfo = {
         url = $('#URL').val();
         name = $('#NAME').val();
         dir = path.join(__dirname + '../../../', 'save', name);
+        // dir = path.join(__dirname, '..', '..', '..', 'save', name);
         // dir = path.join(__dirname, 'save', name);
     }, say: function (text) {
         $.notify(text, {allow_dismiss: false});
@@ -170,7 +168,6 @@ var appPars = {
     line: function () {
         appInfo.fade("fadeIn")
         appInfo.get();
-        console.log('++++++++++++++++++++++++++++++++++', dir)
         if (fs.existsSync(dir)) {
             appPars.removeLocalDir(dir);
         }
@@ -418,10 +415,11 @@ var appFtpTasker = {
         });
     }, preClickOnParsBt: function () {
         if (appFtpTasker.ftpRoundId.length == 2) {
-            console.log("---");
-            var data = HF.readFile(path.join(dir, 'index.html'));
             if (confAndData.compressImg)
-                HF.compressImg(path.join(dir, 'images'));
+                HF.compressImgGulp(path.join(dir, 'images'));
+            var data = HF.readFile(path.join(dir, 'index.html'));
+            // if (confAndData.compressImg)
+            //     HF.compressImg(path.join(dir, 'images'));
             data = HF.replaceText(data, confAndData.regXOneFrom, confAndData.regXOneTo);
             data = HF.replaceText(data, confAndData.regXOneTwoFrom, confAndData.regXOneTwoTo);
             data = HF.replaceTextDir(data, name);
@@ -429,32 +427,26 @@ var appFtpTasker = {
             data = HF.appendJsToFinish(data, confAndData.appendJsToFinish);
             data = HF.appendCssToStart(data, confAndData.appendCssToStart);
             data = HF.appendCssToFinish(data, confAndData.appendCssToFinish);
-            console.log("---");
             if (appPars.tmpVideoUrl != '')
                 data = data.replace(appPars.tmpVideoUrl.filename, appPars.tmpVideoUrl.url);
-            console.log("---");
             var tempData = data;
             try {
                 if (confAndData.minifyHtml)
                     data = HF.minifyHtml(data);
             } catch (err) {
-                console.log(err)
                 data = tempData;
             }
-            console.log("---");
             appPars.tmpVideoUrl = '';
             fs.unlink(path.join(dir, 'index.html'), function (err, result) {
                 if (fs.existsSync(path.join(dir, 'index.php')))
-                    console.log("---");
                     fs.unlink(path.join(dir, 'index.php'), function (err, result) {
                         fs.writeFile(path.join(dir, 'index.php'), data, function (err) {
-                            console.log("---");
+
                             appFtpTasker.clickOnParsBtn();
                         });
                     });
             });
         } else if (appFtpTasker.ftpRoundId.length == 1) {
-            console.log("---");
             // прочти файл
             var data = HF.readFile(path.join(dir, 'index.php'));
             // замени текст
@@ -508,3 +500,13 @@ $(document).ready(function () {
 //         dir = path.join(__dirname, 'save1', name);
 // })
 // ipcRenderer.send('asynchronous-message', 'ping');
+
+
+
+
+
+
+
+
+
+
